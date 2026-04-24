@@ -1,0 +1,216 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - PROFILE PAGE STYLES
+   ============================================ */
+
+/* Main section wrapper */
+.profile-section {
+    padding: var(--space-12) 0;
+    background: linear-gradient(160deg, var(--color-bg-cream) 0%, #FFF9ED 50%, var(--color-bg-soft) 100%);
+    min-height: 80vh;
+}
+
+/* Form container card */
+.profile-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-8);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--color-border);
+}
+
+/* Progress container */
+.progress-container {
+    margin-bottom: var(--space-6);
+}
+
+.progress-container .d-flex span {
+    font-size: 0.95rem;
+}
+
+#progress-percent,
+#progress-percent-urdu {
+    font-size: 1.1rem;
+    color: var(--color-primary-green);
+}
+
+/* Each form section */
+.form-section {
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+    transition: border-color var(--transition-base);
+}
+
+.form-section:hover {
+    border-color: var(--color-accent-gold-light);
+}
+
+/* Section heading */
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary-green);
+    border-bottom: 2px solid var(--color-accent-gold);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+.form-section-title .urdu {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+/* Two-column field layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+/* Photo upload area */
+.photo-upload-area {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+}
+
+/* Circular preview container */
+.photo-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--color-bg-soft);
+    border: 3px solid var(--color-accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Actions beside preview */
+.photo-actions {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Photo hint text */
+.photo-hint {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    margin-top: var(--space-2);
+}
+
+/* Bottom buttons */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    flex-wrap: wrap;
+}
+
+/* Loader spacing */
+#form-loader {
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+/* Message area */
+#form-message {
+    padding: var(--space-4);
+    margin-top: var(--space-3);
+    font-weight: 500;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: var(--space-6);
+    }
+
+    .form-section {
+        padding: var(--space-4);
+    }
+
+    .photo-upload-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .photo-preview {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-section {
+        padding: var(--space-8) 0;
+    }
+
+    .profile-card {
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .form-section {
+        padding: var(--space-3);
+    }
+
+    .form-section-title {
+        font-size: 1.1rem;
+        flex-wrap: wrap;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .photo-upload-area {
+        align-items: center;
+        text-align: center;
+    }
+
+    .photo-actions {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+    .photo-preview {
+        width: 80px;
+        height: 80px;
+    }
+
+    .form-section-title {
+        font-size: 1rem;
+    }
+  }
