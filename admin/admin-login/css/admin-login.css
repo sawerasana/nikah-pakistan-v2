@@ -1,0 +1,113 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - ADMIN LOGIN PAGE STYLES
+   ============================================ */
+
+/* Main wrapper – darker green background to differentiate */
+.admin-login-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8) var(--container-padding);
+    background: linear-gradient(160deg, #0A2E1F 0%, var(--color-primary-green) 50%, #0A3D2A 100%);
+}
+
+/* White card */
+.admin-login-card {
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-8);
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Branding area */
+.admin-branding {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.admin-branding i {
+    color: var(--color-accent-gold);
+}
+
+.admin-branding h1 {
+    color: var(--color-primary-green);
+    font-size: 1.8rem;
+    margin-top: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.admin-branding h1 .urdu {
+    color: var(--color-accent-gold);
+    font-size: 1.2rem;
+}
+
+/* Input with icon (same as main site) */
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--color-text-light);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: color var(--transition-fast);
+}
+
+[dir="rtl"] .input-icon i {
+    left: auto;
+    right: 15px;
+}
+
+.input-icon .form-input {
+    padding-left: 2.5rem;
+}
+
+[dir="rtl"] .input-icon .form-input {
+    padding-left: 1rem;
+    padding-right: 2.5rem;
+}
+
+/* Error message (already global, slight overrides) */
+#admin-login-error {
+    margin-top: var(--space-3);
+    font-weight: 500;
+}
+
+/* Loader */
+#admin-login-loader {
+    margin-top: var(--space-4);
+}
+
+/* Back link */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--color-accent-gold);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .admin-login-card {
+        padding: var(--space-6) var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+}
