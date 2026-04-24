@@ -1,0 +1,197 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - MANAGE PROPOSALS STYLES
+   ============================================ */
+
+/* ---------- Filter Row ---------- */
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: flex-end;
+    margin-top: var(--space-3);
+}
+
+.filter-row .filter-group {
+    flex: 1 1 180px;
+    min-width: 160px;
+}
+
+.filter-row .filter-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: var(--space-1);
+    color: var(--color-text-medium);
+}
+
+.filter-row .filter-group input,
+.filter-row .filter-group select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.filter-actions {
+    display: flex;
+    gap: var(--space-2);
+    align-self: flex-end;
+}
+
+/* ---------- Table Container ---------- */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
+    margin-top: var(--space-4);
+}
+
+/* ---------- Admin Table ---------- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-table th {
+    background: var(--color-bg-soft);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+}
+
+[dir="rtl"] .admin-table th {
+    text-align: right;
+}
+
+.admin-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border-light);
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background: var(--color-bg-soft);
+}
+
+/* ---------- Table Photo Thumbnail ---------- */
+.table-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-bg-soft);
+    display: block;
+}
+
+/* ---------- Status Badges ---------- */
+.badge-status {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-active {
+    background: #E6F9EC;
+    color: #065F46;
+}
+
+.badge-pending {
+    background: #FFF9E6;
+    color: #B45309;
+}
+
+.badge-married {
+    background: #F3E8FF;
+    color: #6D28D9;
+}
+
+.badge-rejected {
+    background: #FDE8E8;
+    color: #9B1C1C;
+}
+
+/* ---------- Action Buttons in Table ---------- */
+.table-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.btn-table-action {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-table-action.btn-edit {
+    background: var(--color-bg-soft);
+    color: var(--color-primary-green);
+    border: 1px solid var(--color-border);
+}
+
+.btn-table-action.btn-edit:hover {
+    background: var(--color-primary-green);
+    color: white;
+}
+
+.btn-table-action.btn-married {
+    background: var(--color-accent-gold-glow);
+    color: var(--color-primary-green);
+    border: 1px solid var(--color-accent-gold);
+}
+
+.btn-table-action.btn-married:hover {
+    background: var(--color-accent-gold);
+    color: white;
+}
+
+.btn-table-action.btn-delete {
+    background: #FDE8E8;
+    color: #9B1C1C;
+    border: 1px solid #EF4444;
+}
+
+.btn-table-action.btn-delete:hover {
+    background: var(--color-error);
+    color: white;
+}
+
+/* ---------- Empty State ---------- */
+#empty-state {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px dashed var(--color-border);
+    padding: var(--space-8);
+    max-width: 500px;
+    margin: var(--space-8) auto;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-row .filter-group {
+        min-width: auto;
+    }
+    .admin-table {
+        font-size: 0.8rem;
+    }
+}
