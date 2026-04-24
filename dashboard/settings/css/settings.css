@@ -1,0 +1,112 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - SETTINGS PAGE STYLES
+   ============================================ */
+
+/* Main section */
+.settings-section {
+    padding: var(--space-12) 0;
+    min-height: 80vh;
+    background: linear-gradient(160deg, var(--color-bg-cream) 0%, #FFF9ED 50%, var(--color-bg-soft) 100%);
+}
+
+/* White card container */
+.settings-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-8);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--color-border);
+}
+
+/* Page title */
+.settings-card .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    color: var(--color-primary-green);
+    font-size: 1.5rem;
+}
+
+/* Settings block (each sub-section) */
+.settings-block {
+    background: var(--color-bg-soft);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+    border: 1px solid var(--color-border-light);
+}
+
+/* Block title */
+.settings-block-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary-green);
+    border-bottom: 2px solid var(--color-accent-gold);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.settings-block-title .urdu {
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+}
+
+/* Form inside block */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Password message */
+#password-message {
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+}
+
+/* Action buttons row */
+.settings-actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+/* Hint text */
+.text-muted.text-small {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: var(--space-2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .settings-card {
+        padding: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-card {
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .settings-block {
+        padding: var(--space-4);
+    }
+
+    .settings-actions {
+        flex-direction: column;
+    }
+
+    .settings-actions .btn {
+        width: 100%;
+    }
+}
