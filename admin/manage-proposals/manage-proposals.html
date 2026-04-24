@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Proposals | Nikah Pakistan Admin</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/manage-proposals.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h3 class="sidebar-title">Nikah Pakistan</h3>
+                    <span class="urdu" style="color: var(--color-accent-gold); font-size: 0.85rem;">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../admin-dashboard/admin-dashboard.html" class="sidebar-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                    <span class="urdu">ڈیش بورڈ</span>
+                </a>
+                <a href="manage-proposals.html" class="sidebar-link active">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Manage Proposals</span>
+                    <span class="urdu">رشتے منیج کریں</span>
+                </a>
+                <a href="../approve-photos/approve-photos.html" class="sidebar-link">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Approve Photos</span>
+                    <span class="urdu">تصاویر منظور کریں</span>
+                </a>
+                <a href="../manage-interests/manage-interests.html" class="sidebar-link">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Manage Interests</span>
+                    <span class="urdu">دلچسپیاں منیج کریں</span>
+                </a>
+                <a href="../admin-settings/admin-settings.html" class="sidebar-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                    <span class="urdu">ترتیبات</span>
+                </a>
+                <hr style="border-color: rgba(255,255,255,0.15); margin: var(--space-3) 0;">
+                <a href="../../index/index.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Main Site</span>
+                    <span class="urdu">مرکزی سائٹ پر واپس</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <header class="admin-topbar">
+                <div class="d-flex align-center justify-between flex-wrap gap-3">
+                    <button id="sidebar-toggle" class="btn btn-icon btn-secondary" aria-label="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="admin-page-title">
+                        <span>Manage Proposals</span>
+                        <span class="urdu">رشتے منیج کریں</span>
+                    </h2>
+                    <div class="d-flex align-center gap-3">
+                        <button id="logout-btn" class="btn btn-secondary btn-small">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Search / Filter Row -->
+                <div class="filter-row mt-3 d-flex flex-wrap gap-3 align-end">
+                    <div class="filter-group">
+                        <label><span>Search Name / City</span> <span class="urdu">نام / شہر تلاش کریں</span></label>
+                        <input type="text" id="search-input" class="form-input" placeholder="Type...">
+                    </div>
+                    <div class="filter-group">
+                        <label><span>Status</span> <span class="urdu">اسٹیٹس</span></label>
+                        <select id="status-filter" class="form-input form-select">
+                            <option value="">All</option>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="Married">Married</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button id="apply-filters-btn" class="btn btn-primary btn-small">
+                            <span>Filter</span> <span class="urdu">فلٹر</span>
+                        </button>
+                        <button id="clear-filters-btn" class="btn btn-secondary btn-small">
+                            <span>Clear</span> <span class="urdu">ہٹائیں</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="admin-content">
+                <!-- Table Container -->
+                <div class="table-container">
+                    <table class="admin-table" id="proposals-table">
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th><span>Name</span> <span class="urdu">نام</span></th>
+                                <th><span>City</span> <span class="urdu">شہر</span></th>
+                                <th><span>Age</span> <span class="urdu">عمر</span></th>
+                                <th><span>Gender</span> <span class="urdu">جنس</span></th>
+                                <th><span>Status</span> <span class="urdu">اسٹیٹس</span></th>
+                                <th><span>Actions</span> <span class="urdu">اقدامات</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Rendered by JavaScript -->
+                            <tr>
+                                <td colspan="7" class="text-center text-muted p-4">
+                                    <span>Loading proposals...</span>
+                                    <span class="urdu">رشتے لوڈ ہو رہے ہیں...</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State (hidden by default) -->
+                <div id="empty-state" class="no-results text-center p-8" style="display: none;">
+                    <i class="fa-solid fa-folder-open fa-3x" style="color: var(--color-text-light);"></i>
+                    <p class="mt-3 font-medium">
+                        <span>No proposals found.</span>
+                        <span class="urdu">کوئی رشتہ نہیں ملا۔</span>
+                    </p>
+                </div>
+
+                <!-- Loader for table actions -->
+                <div id="table-loader" class="loader mt-6" style="display: none;"></div>
+            </main>
+
+            <footer class="admin-footer">
+                <p class="text-small text-muted">
+                    <span>&copy; <span class="js-current-year"></span> Nikah Pakistan Admin.</span>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/manage-proposals.js"></script>
+</body>
+                      </html>
