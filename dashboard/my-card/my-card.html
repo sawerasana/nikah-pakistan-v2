@@ -84,11 +84,11 @@
                                 </div>
                             </div>
 
-                            <!-- Personal Details -->
+                            <!-- Basic Information -->
                             <div class="form-section">
                                 <h3 class="form-section-title">
-                                    <span>Personal Details</span>
-                                    <span class="urdu">ذاتی معلومات</span>
+                                    <span>Basic Information</span>
+                                    <span class="urdu">بنیادی معلومات</span>
                                 </h3>
                                 <div class="form-row">
                                     <div class="form-group">
@@ -114,14 +114,191 @@
                                         <input type="text" id="prop-city" class="form-input" placeholder="Lahore" required>
                                     </div>
                                 </div>
-                                <!-- ... all other fields ... (similar to profile but with prop- prefix) -->
-                                <!-- I'll include a representative set; JS will handle gathering all fields -->
-                                <!-- For brevity, I'm listing a few; the actual code would contain ALL fields exactly as profile but prefixed prop-. 
-                                     I'll provide a complete set in the final code below. 
-                                -->
                             </div>
 
-                            <!-- Buttons -->
+                            <!-- Personal Details -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <span>Personal Details</span>
+                                    <span class="urdu">ذاتی معلومات</span>
+                                </h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Height</span><span class="urdu">قد</span></label>
+                                        <input type="text" id="prop-height" class="form-input" placeholder="5'10&quot;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Complexion</span><span class="urdu">رنگ</span></label>
+                                        <select id="prop-complexion" class="form-input form-select">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Fair">Fair</option>
+                                            <option value="Wheatish">Wheatish</option>
+                                            <option value="Brown">Brown</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Caste</span><span class="urdu">قوم</span></label>
+                                        <input type="text" id="prop-caste" class="form-input" placeholder="Rajput, Arain, etc.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Tehsil</span><span class="urdu">تحصیل</span></label>
+                                        <input type="text" id="prop-tehsil" class="form-input" placeholder="City Tehsil">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>District</span><span class="urdu">ضلع</span></label>
+                                        <input type="text" id="prop-district" class="form-input" placeholder="District">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Maslak</span><span class="urdu">مسلک</span></label>
+                                        <select id="prop-maslak" class="form-input form-select">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Sunni Hanafi">Sunni Hanafi</option>
+                                            <option value="Sunni Shafi">Sunni Shafi</option>
+                                            <option value="Sunni Maliki">Sunni Maliki</option>
+                                            <option value="Sunni Hanbali">Sunni Hanbali</option>
+                                            <option value="Shia Ithna Ashari">Shia Ithna Ashari</option>
+                                            <option value="Shia Ismaili">Shia Ismaili</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education & Profession -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <span>Education & Profession</span>
+                                    <span class="urdu">تعلیم اور پیشہ</span>
+                                </h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Education</span><span class="urdu">تعلیم</span></label>
+                                        <input type="text" id="prop-education" class="form-input" placeholder="MBA, BSc, etc.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Religious Education</span><span class="urdu">دینی تعلیم</span></label>
+                                        <input type="text" id="prop-religiousEducation" class="form-input" placeholder="Hafiz, Aalim, etc.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><span>Profession</span><span class="urdu">پیشہ</span></label>
+                                    <input type="text" id="prop-profession" class="form-input" placeholder="Engineer, Doctor, etc.">
+                                </div>
+                            </div>
+
+                            <!-- Family & Lifestyle -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <span>Family & Lifestyle</span>
+                                    <span class="urdu">خاندان اور طرزِ زندگی</span>
+                                </h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Marital Status</span><span class="urdu">ازدواجی حیثیت</span></label>
+                                        <select id="prop-maritalStatus" class="form-input form-select">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Never Married">Never Married</option>
+                                            <option value="Divorced">Divorced</option>
+                                            <option value="Widowed">Widowed</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="prop-prev-marriage-group" style="display: none;">
+                                        <label class="form-label"><span>Previous Marriage Details</span><span class="urdu">پچھلی شادی کی تفصیل</span></label>
+                                        <input type="text" id="prop-previousMarriageDetails" class="form-input" placeholder="If applicable">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Number of Children</span><span class="urdu">بچوں کی تعداد</span></label>
+                                        <input type="number" id="prop-childrenCount" class="form-input" min="0" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Mother Tongue</span><span class="urdu">مادری زبان</span></label>
+                                        <input type="text" id="prop-motherTongue" class="form-input" placeholder="Urdu, Punjabi, etc.">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Number of Siblings</span><span class="urdu">بہن بھائیوں کی تعداد</span></label>
+                                        <input type="number" id="prop-siblingsCount" class="form-input" min="0" placeholder="3">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Married Siblings</span><span class="urdu">شادی شدہ بہن بھائی</span></label>
+                                        <input type="number" id="prop-marriedSiblingsCount" class="form-input" min="0" placeholder="1">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>House Status</span><span class="urdu">گھر</span></label>
+                                        <select id="prop-houseStatus" class="form-input form-select">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Own">Own</option>
+                                            <option value="Rent">Rent</option>
+                                            <option value="Apartment">Apartment</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Parents Alive</span><span class="urdu">والدین</span></label>
+                                        <select id="prop-parentsAlive" class="form-input form-select">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Both">Both</option>
+                                            <option value="Only Father">Only Father</option>
+                                            <option value="Only Mother">Only Mother</option>
+                                            <option value="None">None</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><span>Monthly Income</span><span class="urdu">ماہانہ آمدن</span></label>
+                                    <input type="text" id="prop-monthlyIncome" class="form-input" placeholder="50,000 - 80,000 PKR">
+                                </div>
+                            </div>
+
+                            <!-- Partner Preferences -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <span>Partner Preferences</span>
+                                    <span class="urdu">پسندیدہ رشتے کی تفصیلات</span>
+                                </h3>
+                                <div class="form-group">
+                                    <label class="form-label"><span>Marriage Timeline</span><span class="urdu">شادی کب تک چاہیے؟</span></label>
+                                    <input type="text" id="prop-marriageTimeline" class="form-input" placeholder="Within 6 months, 1 year, etc.">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><span>Your Demands / Expectations</span><span class="urdu">آپ کی ڈیمانڈ</span></label>
+                                    <textarea id="prop-demands" class="form-textarea" rows="3" placeholder="Religious, educated, family-oriented..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><span>Preferred Cities</span><span class="urdu">پسندیدہ شہر</span></label>
+                                    <input type="text" id="prop-preferredCities" class="form-input" placeholder="Lahore, Islamabad">
+                                </div>
+                            </div>
+   <!-- Contact & Additional -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <span>Contact & Additional Info</span>
+                                    <span class="urdu">رابطہ اور اضافی معلومات</span>
+                                </h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Contact Number (Private)</span><span class="urdu">رابطہ نمبر</span></label>
+                                        <input type="tel" id="prop-contactNumber" class="form-input" dir="ltr" placeholder="03XX-XXXXXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"><span>Hobbies / Interests</span><span class="urdu">مشاغل</span></label>
+                                        <input type="text" id="prop-hobbies" class="form-input" placeholder="Reading, Travel">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><span>Jahez / Haq Mehr (if applicable)</span><span class="urdu">جہیز / حق مہر</span></label>
+                                    <input type="text" id="prop-jahezOrHaqMehr" class="form-input" placeholder="Optional">
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
                             <div class="form-actions d-flex justify-center gap-4 mt-6">
                                 <button type="submit" class="btn btn-primary">
                                     <span>Publish Proposal</span>
@@ -177,4 +354,4 @@
     <!-- Page JS -->
     <script type="module" src="js/my-card.js"></script>
 </body>
-                                                                                    </html>
+</html>
