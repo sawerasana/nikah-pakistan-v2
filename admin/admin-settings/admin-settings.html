@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/admin-settings.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h3 class="sidebar-title">Nikah Pakistan</h3>
+                    <span class="urdu" style="color: var(--color-accent-gold); font-size: 0.85rem;">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../admin-dashboard/admin-dashboard.html" class="sidebar-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                    <span class="urdu">ڈیش بورڈ</span>
+                </a>
+                <a href="../manage-proposals/manage-proposals.html" class="sidebar-link">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Manage Proposals</span>
+                    <span class="urdu">رشتے منیج کریں</span>
+                </a>
+                <a href="../approve-photos/approve-photos.html" class="sidebar-link">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Approve Photos</span>
+                    <span class="urdu">تصاویر منظور کریں</span>
+                </a>
+                <a href="../manage-interests/manage-interests.html" class="sidebar-link">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Manage Interests</span>
+                    <span class="urdu">دلچسپیاں منیج کریں</span>
+                </a>
+                <a href="admin-settings.html" class="sidebar-link active">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                    <span class="urdu">ترتیبات</span>
+                </a>
+                <hr style="border-color: rgba(255,255,255,0.15); margin: var(--space-3) 0;">
+                <a href="../../index/index.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Main Site</span>
+                    <span class="urdu">مرکزی سائٹ پر واپس</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <header class="admin-topbar">
+                <div class="d-flex align-center justify-between flex-wrap gap-3">
+                    <button id="sidebar-toggle" class="btn btn-icon btn-secondary" aria-label="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="admin-page-title">
+                        <span>Settings</span>
+                        <span class="urdu">ترتیبات</span>
+                    </h2>
+                    <div class="d-flex align-center gap-3">
+                        <button id="logout-btn" class="btn btn-secondary btn-small">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="admin-content">
+                <form id="admin-settings-form" class="settings-card">
+                    <!-- General Settings Section -->
+                    <div class="settings-block">
+                        <h3 class="settings-block-title">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>General Settings</span>
+                            <span class="urdu">عام ترتیبات</span>
+                        </h3>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>Site Name</span>
+                                <span class="urdu">سائٹ کا نام</span>
+                            </label>
+                            <input type="text" id="site-name" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>Admin WhatsApp Number</span>
+                                <span class="urdu">ایڈمن واٹس ایپ نمبر</span>
+                            </label>
+                            <input type="text" id="admin-whatsapp" class="form-input" dir="ltr" placeholder="923xxxxxxxxxx">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>Support Email</span>
+                                <span class="urdu">سپورٹ ای میل</span>
+                            </label>
+                            <input type="email" id="support-email" class="form-input" dir="ltr">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>WhatsApp Channel Link</span>
+                                <span class="urdu">واٹس ایپ چینل لنک</span>
+                            </label>
+                            <input type="url" id="channel-link" class="form-input" dir="ltr">
+                        </div>
+                    </div>
+
+                    <!-- Matching Algorithm Section -->
+                    <div class="settings-block">
+                        <h3 class="settings-block-title">
+                            <i class="fa-solid fa-code-branch"></i>
+                            <span>Matching Algorithm Weights</span>
+                            <span class="urdu">میچنگ الگورتھم وزن</span>
+                        </h3>
+                        <p class="text-muted text-small mb-4">
+                            <span>Weights must sum to 100. Adjust sliders to change importance.</span>
+                            <span class="urdu">وزن کا مجموعہ 100 ہونا چاہیے۔ اہمیت تبدیل کرنے کے لیے سلائیڈرز ایڈجسٹ کریں۔</span>
+                        </p>
+                        <div class="weight-grid">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>City Match</span>
+                                    <span class="urdu">شہر میچ</span>
+                                </label>
+                                <input type="range" id="weight-city" min="0" max="100" value="35" class="weight-slider">
+                                <span class="weight-value" id="city-value">35</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Age Range</span>
+                                    <span class="urdu">عمر کی حد</span>
+                                </label>
+                                <input type="range" id="weight-age" min="0" max="100" value="25" class="weight-slider">
+                                <span class="weight-value" id="age-value">25</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Maslak</span>
+                                    <span class="urdu">مسلک</span>
+                                </label>
+                                <input type="range" id="weight-maslak" min="0" max="100" value="20" class="weight-slider">
+                                <span class="weight-value" id="maslak-value">20</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Education</span>
+                                    <span class="urdu">تعلیم</span>
+                                </label>
+                                <input type="range" id="weight-education" min="0" max="100" value="15" class="weight-slider">
+                                <span class="weight-value" id="education-value">15</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Language</span>
+                                    <span class="urdu">زبان</span>
+                                </label>
+                                <input type="range" id="weight-language" min="0" max="100" value="5" class="weight-slider">
+                                <span class="weight-value" id="language-value">5</span>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label class="form-label">
+                                <span>Minimum Match Percentage</span>
+                                <span class="urdu">کم از کم میچ فیصد</span>
+                            </label>
+                            <input type="number" id="min-match-percent" class="form-input" min="0" max="100" value="60">
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            <span>Save Settings</span>
+                            <span class="urdu">ترتیبات محفوظ کریں</span>
+                        </button>
+                    </div>
+
+                    <!-- Message Area -->
+                    <div id="settings-message" class="form-message mt-4" style="display: none;"></div>
+                </form>
+            </main>
+
+            <footer class="admin-footer">
+                <p class="text-small text-muted">
+                    <span>&copy; <span class="js-current-year"></span> Nikah Pakistan Admin.</span>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/admin-settings.js"></script>
+</body>
+</html>
