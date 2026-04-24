@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/success-stories.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container d-flex align-center justify-between flex-wrap">
+            <div class="logo-area d-flex align-center gap-3">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h1 class="site-title">Nikah Pakistan</h1>
+                    <span class="urdu" style="color: var(--color-accent-gold);">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="nav-links d-flex gap-4 align-center">
+                <a href="../browse/browse.html" class="nav-link">Browse <span class="urdu">رشتے</span></a>
+                <a href="../profile/profile.html" class="nav-link">Profile <span class="urdu">پروفائل</span></a>
+                <div class="notification-bell" id="notification-bell-placeholder"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="stories-section">
+            <div class="container">
+                <!-- Page Heading -->
+                <div class="section-heading text-center mb-8">
+                    <h2>
+                        <i class="fa-solid fa-heart" style="color: var(--color-accent-gold);"></i>
+                        <span>Success Stories</span>
+                        <span class="urdu">کامیاب رشتے</span>
+                    </h2>
+                    <p class="text-muted mt-2">
+                        <span>Alhamdulillah, these couples found their match through Nikah Pakistan.</span>
+                        <span class="urdu">الحمدللہ، ان جوڑوں نے نکاح پاکستان کے ذریعے اپنا جوڑ تلاش کیا۔</span>
+                    </p>
+                </div>
+
+                <!-- Stories Grid -->
+                <div id="stories-grid" class="stories-grid">
+                    <!-- Cards rendered by JS -->
+                    <div class="loading-placeholder text-center p-8">
+                        <div class="loader"></div>
+                        <p class="mt-3 text-muted">
+                            <span>Loading stories...</span>
+                            <span class="urdu">کہانیاں لوڈ ہو رہی ہیں...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-stories" class="no-results text-center p-8" style="display: none;">
+                    <i class="fa-solid fa-heart-circle-plus fa-3x" style="color: var(--color-text-light); margin-bottom: var(--space-4);"></i>
+                    <p class="text-large font-medium">
+                        <span>No success stories yet. Be the first!</span>
+                        <span class="urdu">ابھی تک کوئی کامیاب رشتہ نہیں۔ پہلے بنیں!</span>
+                    </p>
+                    <a href="../browse/browse.html" class="btn btn-primary mt-4">
+                        <span>Browse Proposals</span>
+                        <span class="urdu">رشتے دیکھیں</span>
+                    </a>
+                </div>
+
+                <!-- Loader -->
+                <div id="stories-loader" class="loader mt-8" style="display: none;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-col align-center gap-2">
+            <div>
+                <span class="js-site-name" style="font-weight: 600;"></span> &mdash;
+                <span class="js-site-urdu-name urdu"></span>
+            </div>
+            <div class="footer-links d-flex gap-4">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#" class="js-support-email"></a>
+            </div>
+            <p class="text-small">
+                <span>&copy; <span class="js-current-year"></span> All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/success-stories.js"></script>
+</body>
+</html>
