@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/verify.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container d-flex align-center justify-between flex-wrap">
+            <div class="logo-area d-flex align-center gap-3">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h1 class="site-title">Nikah Pakistan</h1>
+                    <span class="urdu" style="color: var(--color-accent-gold);">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="nav-links d-flex gap-4">
+                <a href="../../dashboard/browse/browse.html" class="nav-link">Browse <span class="urdu">رشتے</span></a>
+                <a href="../../dashboard/success-stories/success-stories.html" class="nav-link">Stories <span class="urdu">کہانیاں</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="verify-card">
+                    <div class="verify-icon">
+                        <i class="fa-solid fa-envelope-circle-check fa-4x"></i>
+                    </div>
+                    <h2 class="text-center">
+                        <span>Verify Your Email</span>
+                        <span class="urdu">اپنی ای میل کی تصدیق کریں</span>
+                    </h2>
+                    <p class="text-center text-muted">
+                        <span>We've sent a verification link to your email. Please click the link in that email to verify your account.</span>
+                        <span class="urdu">ہم نے آپ کی ای میل پر تصدیق کا لنک بھیج دیا ہے۔ براہ کرم اس لنک پر کلک کریں۔</span>
+                    </p>
+
+                    <div id="status-message" class="form-message" style="display: none;"></div>
+
+                    <div class="verify-actions d-flex flex-col gap-3 mt-6">
+                        <button id="check-status-btn" class="btn btn-primary btn-block">
+                            <span>Check Verification Status</span>
+                            <span class="urdu">تصدیق کی صورتحال چیک کریں</span>
+                        </button>
+                        <button id="resend-email-btn" class="btn btn-outline-gold btn-block">
+                            <span>Resend Verification Email</span>
+                            <span class="urdu">تصدیق کی ای میل دوبارہ بھیجیں</span>
+                        </button>
+                    </div>
+
+                    <div id="loading-spinner" class="loader mt-4" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-col align-center gap-2">
+            <div>
+                <span class="js-site-name" style="font-weight: 600;"></span> &mdash;
+                <span class="js-site-urdu-name urdu"></span>
+            </div>
+            <div class="footer-links d-flex gap-4">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#" class="js-support-email"></a>
+            </div>
+            <p class="text-small">
+                <span>&copy; <span class="js-current-year"></span> All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase Config & Services -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page-specific JS -->
+    <script type="module" src="js/verify.js"></script>
+</body>
+</html>
