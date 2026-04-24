@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Photos | Nikah Pakistan Admin</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/approve-photos.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h3 class="sidebar-title">Nikah Pakistan</h3>
+                    <span class="urdu" style="color: var(--color-accent-gold); font-size: 0.85rem;">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../admin-dashboard/admin-dashboard.html" class="sidebar-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                    <span class="urdu">ڈیش بورڈ</span>
+                </a>
+                <a href="../manage-proposals/manage-proposals.html" class="sidebar-link">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Manage Proposals</span>
+                    <span class="urdu">رشتے منیج کریں</span>
+                </a>
+                <a href="approve-photos.html" class="sidebar-link active">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Approve Photos</span>
+                    <span class="urdu">تصاویر منظور کریں</span>
+                </a>
+                <a href="../manage-interests/manage-interests.html" class="sidebar-link">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Manage Interests</span>
+                    <span class="urdu">دلچسپیاں منیج کریں</span>
+                </a>
+                <a href="../admin-settings/admin-settings.html" class="sidebar-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                    <span class="urdu">ترتیبات</span>
+                </a>
+                <hr style="border-color: rgba(255,255,255,0.15); margin: var(--space-3) 0;">
+                <a href="../../index/index.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Main Site</span>
+                    <span class="urdu">مرکزی سائٹ پر واپس</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <header class="admin-topbar">
+                <div class="d-flex align-center justify-between flex-wrap gap-3">
+                    <button id="sidebar-toggle" class="btn btn-icon btn-secondary" aria-label="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="admin-page-title">
+                        <span>Approve Photos</span>
+                        <span class="urdu">تصاویر منظور کریں</span>
+                    </h2>
+                    <div class="d-flex align-center gap-3">
+                        <button id="logout-btn" class="btn btn-secondary btn-small">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="admin-content">
+                <!-- Photo Queue Grid -->
+                <div id="photo-queue" class="photo-queue-grid">
+                    <!-- Cards rendered by JS -->
+                    <div class="loading-placeholder text-center p-8">
+                        <div class="loader"></div>
+                        <p class="mt-3 text-muted">
+                            <span>Loading pending photos...</span>
+                            <span class="urdu">زیر التوا تصاویر لوڈ ہو رہی ہیں...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state" class="no-results text-center p-8" style="display: none;">
+                    <i class="fa-solid fa-check-circle fa-3x" style="color: var(--color-success);"></i>
+                    <p class="mt-3 font-medium">
+                        <span>No photos pending approval.</span>
+                        <span class="urdu">کوئی تصویر زیر التوا نہیں۔</span>
+                    </p>
+                </div>
+
+                <!-- Loader for actions -->
+                <div id="photo-loader" class="loader mt-6" style="display: none;"></div>
+            </main>
+
+            <footer class="admin-footer">
+                <p class="text-small text-muted">
+                    <span>&copy; <span class="js-current-year"></span> Nikah Pakistan Admin.</span>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/approve-photos.js"></script>
+</body>
+</html>
