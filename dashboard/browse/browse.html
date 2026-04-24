@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Proposals | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/browse.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container d-flex align-center justify-between flex-wrap">
+            <div class="logo-area d-flex align-center gap-3">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h1 class="site-title">Nikah Pakistan</h1>
+                    <span class="urdu" style="color: var(--color-accent-gold);">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="nav-links d-flex gap-4 align-center">
+                <a href="../profile/profile.html" class="nav-link">Profile <span class="urdu">پروفائل</span></a>
+                <a href="../settings/settings.html" class="nav-link">Settings <span class="urdu">ترتیبات</span></a>
+                <div class="notification-bell" id="notification-bell-placeholder"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="browse-section">
+            <div class="container">
+                <!-- Page Heading -->
+                <div class="section-heading mb-6">
+                    <h2>
+                        <span>Browse Proposals</span>
+                        <span class="urdu">رشتے تلاش کریں</span>
+                    </h2>
+                    <a href="../my-card/my-card.html" class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Proposal</span>
+                        <span class="urdu">رشتہ شامل کریں</span>
+                    </a>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="filter-bar">
+                    <h3 class="filter-title">
+                        <span>Filter Proposals</span>
+                        <span class="urdu">رشتے فلٹر کریں</span>
+                    </h3>
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label><span>Age Min</span> <span class="urdu">کم از کم عمر</span></label>
+                            <input type="number" id="filter-age-min" class="form-input" min="18" max="100" placeholder="18">
+                        </div>
+                        <div class="filter-group">
+                            <label><span>Age Max</span> <span class="urdu">زیادہ سے زیادہ عمر</span></label>
+                            <input type="number" id="filter-age-max" class="form-input" min="18" max="100" placeholder="100">
+                        </div>
+                        <div class="filter-group">
+                            <label><span>City</span> <span class="urdu">شہر</span></label>
+                            <input type="text" id="filter-city" class="form-input" placeholder="Lahore">
+                        </div>
+                        <div class="filter-group">
+                            <label><span>Education</span> <span class="urdu">تعلیم</span></label>
+                            <input type="text" id="filter-education" class="form-input" placeholder="MBA, BSc">
+                        </div>
+                        <div class="filter-group">
+                            <label><span>Marital Status</span> <span class="urdu">ازدواجی حیثیت</span></label>
+                            <select id="filter-marital" class="form-input form-select">
+                                <option value="">Any</option>
+                                <option value="Never Married">Never Married</option>
+                                <option value="Divorced">Divorced</option>
+                                <option value="Widowed">Widowed</option>
+                            </select>
+                        </div>
+                        <div class="filter-actions d-flex gap-2">
+                            <button id="apply-filters-btn" class="btn btn-primary btn-small">
+                                <span>Apply</span> <span class="urdu">فلٹر لگائیں</span>
+                            </button>
+                            <button id="clear-filters-btn" class="btn btn-secondary btn-small">
+                                <span>Clear</span> <span class="urdu">ہٹائیں</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Count -->
+                <div id="results-info" class="results-info mb-4" style="display: none;">
+                    <span id="results-count">0</span> <span>proposals found</span> <span class="urdu">رشتے ملے</span>
+                </div>
+
+                <!-- Cards Grid -->
+                <div id="cards-grid" class="cards-grid">
+                    <!-- Cards rendered by JS -->
+                    <div class="loading-placeholder text-center p-8">
+                        <div class="loader"></div>
+                        <p class="mt-3 text-muted">
+                            <span>Loading proposals...</span>
+                            <span class="urdu">رشتے لوڈ ہو رہے ہیں...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- No Results -->
+                <div id="no-results" class="no-results text-center p-8" style="display: none;">
+                    <i class="fa-solid fa-magnifying-glass fa-3x" style="color: var(--color-text-light); margin-bottom: var(--space-4);"></i>
+                    <p class="text-large font-medium">
+                        <span>No proposals found.</span>
+                        <span class="urdu">کوئی رشتہ نہیں ملا۔</span>
+                    </p>
+                    <p class="text-muted mt-2">
+                        <span>Try adjusting your filters or check back later.</span>
+                        <span class="urdu">فلٹر تبدیل کریں یا بعد میں دوبارہ چیک کریں۔</span>
+                    </p>
+                </div>
+
+                <!-- Load More -->
+                <div id="load-more-container" class="text-center mt-6" style="display: none;">
+                    <button id="load-more-btn" class="btn btn-secondary">
+                        <span>Load More</span>
+                        <span class="urdu">مزید دیکھیں</span>
+                    </button>
+                </div>
+
+                <!-- Loader for load more -->
+                <div id="load-more-loader" class="loader mt-4" style="display: none;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-col align-center gap-2">
+            <div>
+                <span class="js-site-name" style="font-weight: 600;"></span> &mdash;
+                <span class="js-site-urdu-name urdu"></span>
+            </div>
+            <div class="footer-links d-flex gap-4">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#" class="js-support-email"></a>
+            </div>
+            <p class="text-small">
+                <span>&copy; <span class="js-current-year"></span> All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/browse.js"></script>
+</body>
+  </html>
