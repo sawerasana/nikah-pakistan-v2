@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Matches | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/notifications.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container d-flex align-center justify-between flex-wrap">
+            <div class="logo-area d-flex align-center gap-3">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h1 class="site-title">Nikah Pakistan</h1>
+                    <span class="urdu" style="color: var(--color-accent-gold);">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="nav-links d-flex gap-4 align-center">
+                <a href="../browse/browse.html" class="nav-link">Browse <span class="urdu">رشتے</span></a>
+                <a href="../profile/profile.html" class="nav-link">Profile <span class="urdu">پروفائل</span></a>
+                <div class="notification-bell" id="notification-bell-placeholder"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="notifications-section">
+            <div class="container">
+                <!-- Page Heading -->
+                <div class="section-heading text-center mb-8">
+                    <h2>
+                        <i class="fa-solid fa-bell" style="color: var(--color-accent-gold);"></i>
+                        <span>Your Matches</span>
+                        <span class="urdu">آپ کے میچز</span>
+                    </h2>
+                    <p class="text-muted mt-2">
+                        <span>These proposals match your preferences based on our smart algorithm.</span>
+                        <span class="urdu">یہ رشتے ہمارے سمارٹ الگورتھم کے مطابق آپ کی ترجیحات سے میل کھاتے ہیں۔</span>
+                    </p>
+                </div>
+
+                <!-- Matches List -->
+                <div id="matches-list">
+                    <!-- Match cards rendered by JS -->
+                    <div class="loading-placeholder text-center p-8">
+                        <div class="loader"></div>
+                        <p class="mt-3 text-muted">
+                            <span>Loading your matches...</span>
+                            <span class="urdu">آپ کے میچز لوڈ ہو رہے ہیں...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-matches" class="no-results text-center p-8" style="display: none;">
+                    <i class="fa-solid fa-heart-circle-plus fa-3x" style="color: var(--color-text-light); margin-bottom: var(--space-4);"></i>
+                    <p class="text-large font-medium">
+                        <span>No matches yet.</span>
+                        <span class="urdu">ابھی تک کوئی میچ نہیں۔</span>
+                    </p>
+                    <p class="text-muted mt-2">
+                        <span>Complete your profile to get better matches.</span>
+                        <span class="urdu">بہتر میچز کے لیے اپنی پروفائل مکمل کریں۔</span>
+                    </p>
+                    <a href="../profile/profile.html" class="btn btn-primary mt-4">
+                        <span>Complete Profile</span>
+                        <span class="urdu">پروفائل مکمل کریں</span>
+                    </a>
+                </div>
+
+                <!-- Error State -->
+                <div id="match-error" class="no-results text-center p-8" style="display: none;">
+                    <i class="fa-solid fa-exclamation-circle fa-3x" style="color: var(--color-error);"></i>
+                    <p class="mt-3 font-medium">
+                        <span>Failed to load matches.</span>
+                        <span class="urdu">میچز لوڈ نہیں ہو سکے۔</span>
+                    </p>
+                    <button id="retry-btn" class="btn btn-secondary mt-4">
+                        <span>Retry</span>
+                        <span class="urdu">دوبارہ کوشش</span>
+                    </button>
+                </div>
+
+                <!-- Loader -->
+                <div id="matches-loader" class="loader mt-8" style="display: none;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-col align-center gap-2">
+            <div>
+                <span class="js-site-name" style="font-weight: 600;"></span> &mdash;
+                <span class="js-site-urdu-name urdu"></span>
+            </div>
+            <div class="footer-links d-flex gap-4">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#" class="js-support-email"></a>
+            </div>
+            <p class="text-small">
+                <span>&copy; <span class="js-current-year"></span> All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/notifications.js"></script>
+</body>
+</html>
