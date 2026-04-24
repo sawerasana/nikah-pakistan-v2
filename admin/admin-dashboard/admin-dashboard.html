@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h3 class="sidebar-title">Nikah Pakistan</h3>
+                    <span class="urdu" style="color: var(--color-accent-gold); font-size: 0.85rem;">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="sidebar-link active">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                    <span class="urdu">ڈیش بورڈ</span>
+                </a>
+                <a href="../manage-proposals/manage-proposals.html" class="sidebar-link">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Manage Proposals</span>
+                    <span class="urdu">رشتے منیج کریں</span>
+                </a>
+                <a href="../approve-photos/approve-photos.html" class="sidebar-link">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Approve Photos</span>
+                    <span class="urdu">تصاویر منظور کریں</span>
+                </a>
+                <a href="../manage-interests/manage-interests.html" class="sidebar-link">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Manage Interests</span>
+                    <span class="urdu">دلچسپیاں منیج کریں</span>
+                </a>
+                <a href="../admin-settings/admin-settings.html" class="sidebar-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                    <span class="urdu">ترتیبات</span>
+                </a>
+                <hr style="border-color: rgba(255,255,255,0.15); margin: var(--space-3) 0;">
+                <a href="../../index/index.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Main Site</span>
+                    <span class="urdu">مرکزی سائٹ پر واپس</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="admin-main">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div class="d-flex align-center justify-between flex-wrap gap-3">
+                    <button id="sidebar-toggle" class="btn btn-icon btn-secondary" aria-label="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="admin-page-title">
+                        <span>Admin Dashboard</span>
+                        <span class="urdu">ایڈمن ڈیش بورڈ</span>
+                    </h2>
+                    <div class="d-flex align-center gap-3">
+                        <span id="admin-name-display" class="text-small"></span>
+                        <button id="logout-btn" class="btn btn-secondary btn-small">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="admin-content">
+                <!-- Stats Cards Grid -->
+                <div class="stats-grid" id="stats-grid">
+                    <!-- Card 1: Total Active Proposals -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(10, 77, 60, 0.1);">
+                            <i class="fa-solid fa-users" style="color: var(--color-primary-green);"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stat-active">...</span>
+                            <span class="stat-label">
+                                <span>Active Proposals</span>
+                                <span class="urdu">فعال رشتے</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Pending Approvals -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <i class="fa-solid fa-clock" style="color: var(--color-warning);"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stat-pending">...</span>
+                            <span class="stat-label">
+                                <span>Pending Approvals</span>
+                                <span class="urdu">زیر التوا</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Today's Interests -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(212, 175, 55, 0.1);">
+                            <i class="fa-solid fa-heart" style="color: var(--color-accent-gold);"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stat-interests">...</span>
+                            <span class="stat-label">
+                                <span>Today's Interests</span>
+                                <span class="urdu">آج کی دلچسپیاں</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Success Stories -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1);">
+                            <i class="fa-solid fa-ring" style="color: var(--color-success);"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stat-married">...</span>
+                            <span class="stat-label">
+                                <span>Success Stories</span>
+                                <span class="urdu">کامیاب رشتے</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions mt-8">
+                    <h3 class="section-subtitle mb-4">
+                        <span>Quick Actions</span>
+                        <span class="urdu">فوری اقدامات</span>
+                    </h3>
+                    <div class="quick-actions-grid">
+                        <a href="../manage-proposals/manage-proposals.html" class="quick-action-card">
+                            <i class="fa-solid fa-plus-circle fa-2x" style="color: var(--color-primary-green);"></i>
+                            <span>Add / Manage Proposals</span>
+                            <span class="urdu">رشتے شامل / منیج کریں</span>
+                        </a>
+                        <a href="../approve-photos/approve-photos.html" class="quick-action-card">
+                            <i class="fa-solid fa-check-circle fa-2x" style="color: var(--color-warning);"></i>
+                            <span>Approve Photos</span>
+                            <span class="urdu">تصاویر منظور کریں</span>
+                        </a>
+                        <a href="../manage-interests/manage-interests.html" class="quick-action-card">
+                            <i class="fa-solid fa-message fa-2x" style="color: var(--color-accent-gold);"></i>
+                            <span>View Interests</span>
+                            <span class="urdu">دلچسپیاں دیکھیں</span>
+                        </a>
+                        <a href="../admin-settings/admin-settings.html" class="quick-action-card">
+                            <i class="fa-solid fa-sliders fa-2x" style="color: var(--color-info);"></i>
+                            <span>Settings</span>
+                            <span class="urdu">ترتیبات</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Placeholder -->
+                <div class="recent-activity mt-8">
+                    <h3 class="section-subtitle mb-4">
+                        <span>Recent Activity</span>
+                        <span class="urdu">حالیہ سرگرمی</span>
+                    </h3>
+                    <div id="activity-list" class="activity-list">
+                        <p class="text-muted text-small">
+                            <span>Loading recent activity...</span>
+                            <span class="urdu">حالیہ سرگرمی لوڈ ہو رہی ہے...</span>
+                        </p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="admin-footer">
+                <p class="text-small text-muted">
+                    <span>&copy; <span class="js-current-year"></span> Nikah Pakistan Admin. All rights reserved.</span>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/admin-dashboard.js"></script>
+</body>
+</html>
