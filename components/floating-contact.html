@@ -1,0 +1,63 @@
+<!-- Floating Contact Button Component -->
+<div class="floating-contact">
+    <!-- Main Button -->
+    <button class="contact-main-btn" aria-label="Contact Options" title="Contact Options">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+    <!-- Options Container -->
+    <div class="contact-options">
+        <!-- Admin Contact -->
+        <a class="contact-option js-contact-admin" href="#" target="_blank">
+            <i class="fa-solid fa-headset icon"></i>
+            <span class="label">
+                <span>Contact Admin</span>
+                <span class="urdu">ایڈمن سے رابطہ</span>
+            </span>
+        </a>
+
+        <!-- WhatsApp Channel -->
+        <a class="contact-option js-contact-channel" href="#" target="_blank">
+            <i class="fa-solid fa-bullhorn icon"></i>
+            <span class="label">
+                <span>Join Channel</span>
+                <span class="urdu">چینل جوائن کریں</span>
+            </span>
+        </a>
+    </div>
+</div>
+
+<script>
+    // Toggle expand/collapse on main button click
+    (function() {
+        const wrapper = document.currentScript.parentElement;
+        const mainBtn = wrapper.querySelector('.contact-main-btn');
+        const options = wrapper.querySelector('.contact-options');
+
+        mainBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            wrapper.classList.toggle('active');
+        });
+
+        // Close options when clicking outside
+        document.addEventListener('click', function() {
+            wrapper.classList.remove('active');
+        });
+        options.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Set dynamic links from global config if available
+        if (window.NIKAH_CONFIG) {
+            var adminOption = wrapper.querySelector('.js-contact-admin');
+            var channelOption = wrapper.querySelector('.js-contact-channel');
+            if (adminOption) {
+                var adminMessage = 'Assalam-o-Alaikum Admin Sahab, I need assistance.';
+                adminOption.href = 'https://wa.me/' + window.NIKAH_CONFIG.adminWhatsApp + '?text=' + encodeURIComponent(adminMessage);
+            }
+            if (channelOption && window.NIKAH_CONFIG.whatsappChannelLink) {
+                channelOption.href = window.NIKAH_CONFIG.whatsappChannelLink;
+            }
+        }
+    })();
+</script>
