@@ -1,0 +1,267 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - BROWSE PAGE STYLES
+   ============================================ */
+
+/* Main wrapper */
+.browse-section {
+  padding: var(--space-8) 0 var(--space-12);
+  min-height: 80vh;
+  background: var(--color-bg-cream);
+}
+
+/* Heading row: title + Add Proposal button */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.section-heading h2 {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--color-primary-green);
+}
+
+/* Filter Bar */
+.filter-bar {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--color-border);
+}
+
+.filter-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  color: var(--color-primary-green);
+  font-size: 1.2rem;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+.filter-group {
+  flex: 1 1 150px;
+  min-width: 140px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  color: var(--color-text-medium);
+}
+
+.filter-group .urdu {
+  display: inline-block;
+  margin-right: var(--space-1);
+  color: var(--color-text-light);
+}
+
+.filter-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-self: flex-end;
+  padding-bottom: var(--space-1);
+}
+
+/* Results info */
+.results-info {
+  font-size: 0.95rem;
+  color: var(--color-text-medium);
+}
+
+#results-count {
+  font-weight: 700;
+  color: var(--color-primary-green);
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-5);
+}
+
+/* Proposal Card (override/extend universal .card if needed) */
+.proposal-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  border: 1px solid var(--color-border-light);
+}
+
+.proposal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent-gold-light);
+}
+
+/* Photo wrapper */
+.card-photo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--color-bg-soft);
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter var(--transition-base);
+}
+
+/* Blurred state */
+.card-photo.blurred {
+  filter: blur(8px);
+}
+
+/* Lock overlay (shown only when blurred) */
+.photo-lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 12px rgba(0,0,0,0.7);
+  pointer-events: none;
+  display: none;
+}
+
+.photo-lock-overlay.visible {
+  display: block;
+}
+
+/* Verified badge - positioned top-left */
+.verified-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--color-success);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  z-index: 2;
+}
+
+[dir="rtl"] .verified-badge {
+  left: auto;
+  right: 10px;
+}
+
+/* Card content */
+.card-content {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-primary-green);
+}
+
+.card-detail {
+  display: flex;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  color: var(--color-text-medium);
+}
+
+.card-detail .label {
+  min-width: 70px;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+
+.card-detail .value {
+  flex: 1;
+}
+
+/* Interested button inside card */
+.interested-btn {
+  margin-top: var(--space-3);
+  width: 100%;
+}
+
+/* No results empty state */
+.no-results {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px dashed var(--color-border);
+  padding: var(--space-8);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.no-results i {
+  color: var(--color-text-light);
+}
+
+/* Load more button container */
+#load-more-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Loader inside grid placeholder */
+.loading-placeholder {
+  grid-column: 1 / -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .filter-bar {
+    padding: var(--space-4);
+  }
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-group {
+    min-width: auto;
+  }
+  .filter-actions {
+    align-self: flex-start;
+  }
+    }
