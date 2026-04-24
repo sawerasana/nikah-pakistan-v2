@@ -1,0 +1,349 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - MY CARD PAGE STYLES
+   ============================================ */
+
+/* Main section wrapper */
+.my-card-section {
+    padding: var(--space-12) 0;
+    background: linear-gradient(160deg, var(--color-bg-cream) 0%, #FFF9ED 50%, var(--color-bg-soft) 100%);
+    min-height: 80vh;
+}
+
+/* Tab Buttons (same as index) */
+.tab-buttons {
+    display: flex;
+    background: var(--color-bg-soft);
+    border-radius: var(--radius-full);
+    padding: var(--space-1);
+    margin-bottom: var(--space-6);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    color: var(--color-text-light);
+    transition: all var(--transition-base);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.tab-btn.active {
+    background: var(--color-primary-green);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(10, 77, 60, 0.08);
+    color: var(--color-primary-green);
+}
+
+/* Tab Panels */
+.tab-panel {
+    display: none;
+    animation: fadeInUp 0.3s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* Form Card */
+.form-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-8);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--color-border);
+}
+
+.form-card .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-primary-green);
+    font-size: 1.4rem;
+}
+
+/* Form sections (same as profile) */
+.form-section {
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+}
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary-green);
+    border-bottom: 2px solid var(--color-accent-gold);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+.form-section-title .urdu {
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+}
+
+/* Two-column layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+/* Photo upload area */
+.photo-upload-area {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+}
+
+.photo-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--color-bg-soft);
+    border: 3px solid var(--color-accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-actions {
+    flex: 1;
+    min-width: 200px;
+}
+
+.photo-hint {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    margin-top: var(--space-2);
+}
+
+/* Bottom buttons */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    flex-wrap: wrap;
+}
+
+/* Loader */
+#form-loader {
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+/* Message area */
+#form-message {
+    padding: var(--space-4);
+    margin-top: var(--space-3);
+    font-weight: 500;
+}
+
+/* Proposal List Items */
+#my-proposals-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.proposal-list-item {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-5);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.proposal-list-item:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent-gold-light);
+}
+
+.proposal-thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.proposal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.proposal-thumb i {
+    font-size: 2rem;
+    color: var(--color-text-light);
+}
+
+.proposal-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.proposal-info .prop-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-primary-green);
+}
+
+.proposal-info .prop-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: var(--space-1);
+}
+
+.proposal-status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: #FFF9E6;
+    color: #B45309;
+    border: 1px solid #F59E0B;
+}
+
+.status-active {
+    background: #E6F9EC;
+    color: #065F46;
+    border: 1px solid #10B981;
+}
+
+.status-rejected {
+    background: #FDE8E8;
+    color: #9B1C1C;
+    border: 1px solid #EF4444;
+}
+
+.proposal-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.proposal-actions .btn {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* No proposals */
+#no-proposals {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px dashed var(--color-border);
+    padding: var(--space-8);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-card {
+        padding: var(--space-6);
+    }
+
+    .form-section {
+        padding: var(--space-4);
+    }
+
+    .photo-upload-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .photo-preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .proposal-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .my-card-section {
+        padding: var(--space-8) 0;
+    }
+
+    .form-card {
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .form-section {
+        padding: var(--space-3);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .tab-buttons {
+        max-width: 100%;
+    }
+
+    .tab-btn {
+        font-size: 0.85rem;
+    }
+  }
