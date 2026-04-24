@@ -1,0 +1,104 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - APPROVE PHOTOS STYLES
+   ============================================ */
+
+/* Grid for photo cards */
+.photo-queue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+/* Individual photo card */
+.photo-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.photo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Photo image area */
+.photo-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: var(--color-bg-soft);
+    display: block;
+}
+
+/* Info section inside card */
+.photo-card-info {
+    padding: var(--space-4) var(--space-4) var(--space-2);
+}
+
+.photo-card-info .user-name {
+    font-weight: 600;
+    color: var(--color-primary-green);
+    margin-bottom: var(--space-1);
+}
+
+.photo-card-info .card-id {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-2);
+}
+
+/* Pending status badge */
+.badge-pending-photo {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    background: #FFF9E6;
+    color: #B45309;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Action buttons container */
+.photo-card-actions {
+    padding: 0 var(--space-4) var(--space-4);
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* Full width buttons side by side */
+.photo-card-actions .btn {
+    flex: 1;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+}
+
+/* Empty state (reuse global) */
+#empty-state {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px dashed var(--color-border);
+    padding: var(--space-8);
+    max-width: 500px;
+    margin: var(--space-8) auto;
+}
+
+/* Loader */
+#photo-loader {
+    margin: var(--space-8) auto;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .photo-queue-grid {
+        grid-template-columns: 1fr;
+    }
+    .photo-card-actions {
+        flex-direction: column;
+    }
+}
