@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | Nikah Pakistan</title>
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/settings.css">
+
+    <!-- Universal JS -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container d-flex align-center justify-between flex-wrap">
+            <div class="logo-area d-flex align-center gap-3">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h1 class="site-title">Nikah Pakistan</h1>
+                    <span class="urdu" style="color: var(--color-accent-gold);">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="nav-links d-flex gap-4 align-center">
+                <a href="../browse/browse.html" class="nav-link">Browse <span class="urdu">رشتے</span></a>
+                <a href="../profile/profile.html" class="nav-link">Profile <span class="urdu">پروفائل</span></a>
+                <div class="notification-bell" id="notification-bell-placeholder"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="settings-section">
+            <div class="container">
+                <div class="settings-card">
+                    <h2 class="section-title text-center mb-6">
+                        <i class="fa-solid fa-gear" style="color: var(--color-accent-gold);"></i>
+                        <span>Account Settings</span>
+                        <span class="urdu">اکاؤنٹ کی ترتیبات</span>
+                    </h2>
+
+                    <!-- Change Password Section -->
+                    <div class="settings-block">
+                        <h3 class="settings-block-title">
+                            <span>Change Password</span>
+                            <span class="urdu">پاس ورڈ تبدیل کریں</span>
+                        </h3>
+                        <form id="change-password-form" class="settings-form">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Current Password</span>
+                                    <span class="urdu">موجودہ پاس ورڈ</span>
+                                </label>
+                                <input type="password" id="current-password" class="form-input" dir="ltr" placeholder="••••••••" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>New Password</span>
+                                    <span class="urdu">نیا پاس ورڈ</span>
+                                </label>
+                                <input type="password" id="new-password" class="form-input" dir="ltr" placeholder="••••••••" minlength="6" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Confirm New Password</span>
+                                    <span class="urdu">نئے پاس ورڈ کی تصدیق کریں</span>
+                                </label>
+                                <input type="password" id="confirm-new-password" class="form-input" dir="ltr" placeholder="••••••••" minlength="6" required>
+                            </div>
+                            <div class="form-message" id="password-message" style="display: none;"></div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-lock"></i>
+                                <span>Update Password</span>
+                                <span class="urdu">پاس ورڈ اپ ڈیٹ کریں</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Account Actions Section -->
+                    <div class="settings-block">
+                        <h3 class="settings-block-title">
+                            <span>Account Actions</span>
+                            <span class="urdu">اکاؤنٹ کے اقدامات</span>
+                        </h3>
+                        <div class="settings-actions">
+                            <button id="delete-account-btn" class="btn btn-danger btn-small">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Request Account Deletion</span>
+                                <span class="urdu">اکاؤنٹ ڈیلیٹ کرنے کی درخواست</span>
+                            </button>
+                            <button id="logout-all-btn" class="btn btn-secondary btn-small">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout All Devices</span>
+                                <span class="urdu">تمام ڈیوائسز سے لاگ آؤٹ</span>
+                            </button>
+                        </div>
+                        <p class="text-muted text-small mt-2">
+                            <span>Deletion requests are processed by admin within 24 hours.</span>
+                            <span class="urdu">ڈیلیٹ کی درخواستیں 24 گھنٹے میں ایڈمن پروسیس کرتا ہے۔</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-col align-center gap-2">
+            <div>
+                <span class="js-site-name" style="font-weight: 600;"></span> &mdash;
+                <span class="js-site-urdu-name urdu"></span>
+            </div>
+            <div class="footer-links d-flex gap-4">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#" class="js-support-email"></a>
+            </div>
+            <p class="text-small">
+                <span>&copy; <span class="js-current-year"></span> All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="js/settings.js"></script>
+</body>
+</html>
