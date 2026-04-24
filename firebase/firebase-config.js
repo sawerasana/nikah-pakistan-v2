@@ -24,13 +24,13 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-
 // You can find these in your Firebase Console:
 //   → Project Settings → General → Your Apps → Web App → SDK setup and configuration
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",                             // e.g., "AIzaSyDaGmWKa18JsZap2nNNfi1..."
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",      // e.g., "nikah-pakistan.firebaseapp.com"
-    projectId: "YOUR_PROJECT_ID",                       // e.g., "nikah-pakistan"
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",       // e.g., "nikah-pakistan.appspot.com"
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",      // e.g., "123456789012"
-    appId: "YOUR_APP_ID",                               // e.g., "1:123456789012:web:abcdef123456"
-    measurementId: "YOUR_MEASUREMENT_ID"                // Optional – for Google Analytics (e.g., "G-XXXXXXXXXX")
+  apiKey: "AIzaSyD05ZII0yFGnBsgoSRhBbZ7TGUzAYh7B5o",
+  authDomain: "nikah-pakistan-v2.firebaseapp.com",
+  projectId: "nikah-pakistan-v2",
+  storageBucket: "nikah-pakistan-v2.firebasestorage.app",
+  messagingSenderId: "863677926985",
+  appId: "1:863677926985:web:93ec8a9b363f6962c63998",
+  measurementId: "G-MD55TVZRS8"
 };
 
 // ---------- INITIALIZE FIREBASE ----------
