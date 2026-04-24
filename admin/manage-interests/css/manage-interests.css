@@ -1,0 +1,149 @@
+/* ============================================
+   NIKAH PAKISTAN V2 - MANAGE INTERESTS STYLES
+   ============================================ */
+
+/* Table container – scrollable on small screens */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
+    margin-top: var(--space-4);
+}
+
+/* Interests table */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-table th {
+    background: var(--color-bg-soft);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+}
+
+[dir="rtl"] .admin-table th {
+    text-align: right;
+}
+
+.admin-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border-light);
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background: var(--color-bg-soft);
+}
+
+/* Status badges for interests */
+.badge-interest {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-pending {
+    background: #FFF9E6;
+    color: #B45309;
+}
+
+.badge-contacted {
+    background: #E8F0FE;
+    color: #1E3A5F;
+}
+
+.badge-resolved {
+    background: #E6F9EC;
+    color: #065F46;
+}
+
+/* Table action buttons */
+.table-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.btn-table-action {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    border: 1px solid var(--color-border);
+}
+
+.btn-table-action.btn-contact {
+    background: var(--color-accent-gold-glow);
+    color: var(--color-primary-green);
+    border-color: var(--color-accent-gold);
+}
+
+.btn-table-action.btn-contact:hover {
+    background: var(--color-accent-gold);
+    color: white;
+}
+
+.btn-table-action.btn-contacted {
+    background: #E8F0FE;
+    color: #1E3A5F;
+    border-color: #90CAF9;
+}
+
+.btn-table-action.btn-contacted:hover {
+    background: #90CAF9;
+    color: #0D47A1;
+}
+
+.btn-table-action.btn-resolved {
+    background: #E6F9EC;
+    color: #065F46;
+    border-color: #A5D6A7;
+}
+
+.btn-table-action.btn-resolved:hover {
+    background: #A5D6A7;
+    color: #1B5E20;
+}
+
+/* Empty state */
+#empty-state {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px dashed var(--color-border);
+    padding: var(--space-8);
+    max-width: 500px;
+    margin: var(--space-8) auto;
+}
+
+/* Loader */
+#table-loader {
+    margin: var(--space-8) auto;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-table {
+        font-size: 0.82rem;
+    }
+    .btn-table-action {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
