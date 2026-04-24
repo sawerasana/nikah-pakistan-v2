@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikah Pakistan | نکاح پاکستان</title>
+    <meta name="description" content="A trusted Islamic matrimonial platform">
+    <meta name="theme-color" content="#0A4D3C">
+
+    <!-- Font Awesome 6 (professional icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Universal CSS -->
+    <link rel="stylesheet" href="../../universal/universal.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Universal JS (config, helpers, footer updater) -->
+    <script src="../../universal/universal.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container d-flex align-center justify-between flex-wrap">
+            <div class="logo-area d-flex align-center gap-3">
+                <i class="fa-solid fa-mosque fa-2x" style="color: var(--color-accent-gold);"></i>
+                <div>
+                    <h1 class="site-title">Nikah Pakistan</h1>
+                    <span class="urdu" style="color: var(--color-accent-gold);">نکاح پاکستان</span>
+                </div>
+            </div>
+            <nav class="nav-links d-flex gap-4">
+                <a href="../../dashboard/browse/browse.html" class="nav-link">Browse Proposals <span class="urdu">رشتے دیکھیں</span></a>
+                <a href="../../dashboard/success-stories/success-stories.html" class="nav-link">Success Stories <span class="urdu">کامیاب رشتے</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-card">
+                    <!-- Tab Buttons -->
+                    <div class="tab-buttons" role="tablist">
+                        <button class="tab-btn active" data-tab="login" role="tab" aria-selected="true">
+                            <span>Login</span>
+                            <span class="urdu">لاگ ان</span>
+                        </button>
+                        <button class="tab-btn" data-tab="signup" role="tab" aria-selected="false">
+                            <span>Sign Up</span>
+                            <span class="urdu">اکاؤنٹ بنائیں</span>
+                        </button>
+                    </div>
+
+                    <!-- Login Tab Panel -->
+                    <div class="tab-panel active" id="login-panel">
+                        <form id="login-form" class="auth-form" novalidate>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Email Address</span>
+                                    <span class="urdu">ای میل</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="login-email" class="form-input" dir="ltr" placeholder="you@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Password</span>
+                                    <span class="urdu">پاس ورڈ</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <input type="password" id="login-password" class="form-input" dir="ltr" placeholder="••••••••" required>
+                                </div>
+                            </div>
+                            <div class="form-error" id="login-error" style="display: none;"></div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span>Login</span>
+                                <span class="urdu">لاگ ان</span>
+                            </button>
+                            <div class="form-footer">
+                                <a href="#" class="forgot-link" id="show-forgot">Forgot Password? <span class="urdu">پاس ورڈ بھول گئے؟</span></a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Signup Tab Panel -->
+                    <div class="tab-panel" id="signup-panel">
+                        <form id="signup-form" class="auth-form" novalidate>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Full Name</span>
+                                    <span class="urdu">پورا نام</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="signup-name" class="form-input" placeholder="Ayesha Khan" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Email Address</span>
+                                    <span class="urdu">ای میل</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="signup-email" class="form-input" dir="ltr" placeholder="you@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Password</span>
+                                    <span class="urdu">پاس ورڈ</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <input type="password" id="signup-password" class="form-input" dir="ltr" placeholder="••••••••" minlength="6" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Confirm Password</span>
+                                    <span class="urdu">پاس ورڈ دوبارہ لکھیں</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <input type="password" id="signup-confirm" class="form-input" dir="ltr" placeholder="••••••••" minlength="6" required>
+                                </div>
+                            </div>
+                            <div class="form-row d-flex gap-4">
+                                <div class="form-group flex-1">
+                                    <label class="form-label">
+                                        <span>Gender</span>
+                                        <span class="urdu">جنس</span>
+                                    </label>
+                                    <select id="signup-gender" class="form-input form-select" required>
+                                        <option value="" disabled selected>-- Select --</option>
+                                        <option value="Male">Male <span class="urdu">مرد</span></option>
+                                        <option value="Female">Female <span class="urdu">عورت</span></option>
+                                    </select>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label class="form-label">
+                                        <span>Age</span>
+                                        <span class="urdu">عمر</span>
+                                    </label>
+                                    <input type="number" id="signup-age" class="form-input" min="18" max="100" placeholder="25" required>
+                                </div>
+                            </div>
+                            <div class="form-error" id="signup-error" style="display: none;"></div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span>Sign Up</span>
+                                <span class="urdu">اکاؤنٹ بنائیں</span>
+                            </button>
+                            <p class="text-muted text-small mt-3">
+                                <span>Already have an account?</span>
+                                <span class="urdu">پہلے سے اکاؤنٹ ہے؟</span>
+                                <a href="#" class="switch-to-login" style="color: var(--color-accent-gold); font-weight: 500;">Login</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Forgot Password Mini-Form (Hidden by default) -->
+                    <div class="tab-panel" id="forgot-panel" style="display: none;">
+                        <form id="forgot-form" class="auth-form">
+                            <h3 class="text-center mb-4">
+                                <span>Reset Password</span>
+                                <span class="urdu">پاس ورڈ ری سیٹ کریں</span>
+                            </h3>
+                            <p class="text-muted text-small mb-4">
+                                <span>Enter your email and we'll send you a reset link.</span>
+                                <span class="urdu">اپنی ای میل درج کریں، ہم ری سیٹ لنک بھیجیں گے۔</span>
+                            </p>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Email Address</span>
+                                    <span class="urdu">ای میل</span>
+                                </label>
+                                <div class="input-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="forgot-email" class="form-input" dir="ltr" required>
+                                </div>
+                            </div>
+                            <div class="form-error" id="forgot-error" style="display: none;"></div>
+                            <div class="form-success" id="forgot-success" style="display: none;"></div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span>Send Reset Link</span>
+                                <span class="urdu">ری سیٹ لنک بھیجیں</span>
+                            </button>
+                            <p class="text-center mt-3">
+                                <a href="#" class="back-to-login" style="color: var(--color-accent-gold);">Back to Login <span class="urdu">واپس لاگ ان پر جائیں</span></a>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container d-flex flex-col align-center gap-2">
+            <div>
+                <span class="js-site-name" style="font-weight: 600;"></span> &mdash;
+                <span class="js-site-urdu-name urdu"></span>
+            </div>
+            <div class="footer-links d-flex gap-4">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#" class="js-support-email"></a>
+            </div>
+            <p class="text-small">
+                <span>&copy; <span class="js-current-year"></span> All rights reserved.</span>
+                <span> | Powered by <a href="#" class="js-whatsapp-channel-link">WhatsApp Channel</a></span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase Config & Services -->
+    <script type="module" src="../../firebase/firebase-config.js"></script>
+    <script type="module" src="../../firebase/firebase-services.js"></script>
+    <!-- Page-specific JS -->
+    <script type="module" src="js/index.js"></script>
+</body>
+                              </html>
